@@ -1,0 +1,20 @@
+[project]
+name = "ayon-maya"
+description = "AYON Maya addon."
+dynamic = ["version"]
+requires-python = ">=3.9"
+dependencies = [
+    "attrs",
+    "ayon-applications",
+    "ayon-core",
+    "ayon-python-api",
+    "clique",
+    "qtawesome",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "ayon_maya.version.__version__" }
+
+[tool.uv.sources]
+ayon-applications = { git = "https://github.com/ynput/ayon-applications", subdirectory = "client" }
+ayon-core = { git = "https://github.com/ynput/ayon-core", subdirectory = "client" }
